@@ -17,7 +17,7 @@ body {
 	flex-direction: column;
 	gap: 30px;
 	background-color: rgb(231, 231, 231);
-	opacity: 0;
+	opacity: 1;
 }
 
 header {
