@@ -29,8 +29,8 @@ header {
 	gap: 8px;
 }
 
-.signup > pre{
-	font-family: 'Courier New', Courier, monospace;
+pre {
+	color: rgb(0, 0, 0);
 }
 
 .heading {
@@ -52,6 +52,7 @@ header {
 }
 
 .btn {
+	color: white;
 	height: 40px;
 	width: 200px;
 	margin: 20px auto;
@@ -64,7 +65,7 @@ header {
 
 .login,
 .signup {
-	color: rgb(16, 16, 39);
+	color: rgb(236, 200, 39);
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 22px;
 	border: none;
@@ -80,7 +81,7 @@ header {
 }
 
 .login:active, .signup:active{
-	opacity: 0.7;
+	opacity: 0.5;
 }
 
 .slider {
@@ -88,8 +89,8 @@ header {
 	width: 100px;
 	border-radius: 50px;
 	background-image: linear-gradient(to right,
-			rgb(255, 195, 110),
-			rgb(255, 146, 91));
+			rgb(90, 79, 79),
+			rgb(174, 218, 218));
 	position: absolute;
 	top: 20px;
 	left: 150px;
@@ -143,23 +144,34 @@ header {
 	border-radius: 50px;
 	padding-left: 30px;
 	font-size: 18px;
+	transition: height 0.15s,
+				width 0.15s;
+}
+
+.ele:hover{
+	height: 65px;
+	width: 425px;
 }
 .submit-btn{
 	color: white;
 	font-family: 'Courier New', Courier, monospace;
 	background-image: linear-gradient(to right,
-			rgb(27, 23, 18),
-			rgb(33, 172, 214));
+			rgb(0, 0, 0),
+			rgb(36, 136, 114));
 	height: 40px;
 	width: 100px;
 	border-radius: 50px;
 	font-size: 18px;
 	border: none;
 	cursor: pointer;
-	transition: box-shadow 0.15s;
+	transition: box-shadow 0.15s, 
+				height 0.15s, 
+				width 0.15s;
 }
 .submit-btn:hover{
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+	height: 55px;
+	width: 125px;
 }
 .submit-btn:active{
 	opacity: 0.8;
@@ -217,6 +229,13 @@ header {
 		height: 50px;
 		width: 250px;
 		font-size: 15px;
+		transition: height 0.15s,
+					width 0.15s;
+	}
+
+	.ele:hover{
+		height: 55px;
+		width: 265px;
 	}
 
 	.submit-btn{
@@ -230,6 +249,15 @@ header {
 		font-size: 14px;
 		border: none;
 		cursor: pointer;
+		transition: height 0.15s,
+					width 0.15s,
+					border-radius 0.15s;
+	}
+	
+	.submit-btn:hover{
+		height: 40px;
+		width: 85px;
+		border-radius: 20px;
 	}
 }
 
@@ -287,7 +315,15 @@ header {
 		height: 50px;
 		width: 220px;
 		font-size: 15px;
+		transition: height 0.15s,
+					width 0.15s;
 	}
+	
+	.ele:hover{
+		height: 60px;
+		width: 230px;
+	}
+
 	.submit-btn{
 		color: white;
 		background-image: linear-gradient(to right,
@@ -299,5 +335,14 @@ header {
 		font-size: 18px;
 		border: none;
 		cursor: pointer;
+		transition: height 0.15s,
+					width 0.15s,
+					border-radius 0.15s;
+	}
+	
+	.submit-btn:hover{
+		height: 50px;
+		width: 110px;
+		border-radius: 25px;
 	}
 }
