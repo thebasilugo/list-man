@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <!-- <script src="/static/js/index.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your personal scheduler</title>
+</head>
+<body>
+    <header>
+		<h1 class="heading"></h1>
+	</header>
+
+	<!-- container div -->
+	<div class="container">
+
+		<!-- upper button section to select
+			the login or signup form -->
+            <div class="slider"></div>
+            <div class="btn">
+                <button class="login">Login</button>
+                <button class="signup"><pre> Signup</pre></button>
+            </div>
+    
+
+		<!-- Form section that contains the
+			login and the signup form -->
+            <div class="form-section">
+
+			<!-- login form -->
+<div class="login-box">
+    <form method="POST" action="{% url 'submit_form_login' %}">
+        {% csrf_token %}
+        <input type="email" class="email ele" placeholder="youremail@email.com" name="email" id="email">
+        <br>
+        <input type="password" class="password ele" placeholder="Password" name="Password" id="Password">
+        <button class="submit-btn" type="submit" >Login</button>
+    </form>
+</div>
+
+        
+
+			<!-- signup form -->
+<div class="signup-box">
+    <form method="POST" action="{% url 'submit_form' %}" onsubmit="return validateForm();">
+        {% csrf_token %}
+		<input type="text" class="name ele" placeholder="Enter your name" name="username" id="username">
+		<input type="email" class="email ele" placeholder="youremail@email.com" name="email" id="email">
+		<input type="password" class="password ele" placeholder="Password" name="password1" id="password1">
+		<input type="password" class="password ele" placeholder="Confirm password" name="password2" id="password2">
+		<button class="submit-btn" type="submit">Signup</button>
+    </form>
+			</div>
+		</div>
+        
+	</div>
+</body>
+<script>
+    let signup = document.querySelector(".signup");
+let login = document.querySelector(".login");
+let slider = document.querySelector(".slider");
+let formSection = document.querySelector(".form-section");
+
+signup.addEventListener("click", () => {
+	slider.classList.add("moveslider");
+	formSection.classList.add("form-section-move");
+});
+
+login.addEventListener("click", () => {
+	slider.classList.remove("moveslider");
+	formSection.classList.remove("form-section-move");
+});
+
+function validateForm() {
+  var password1 = document.getElementById("password1").value;
+  var password2 = document.getElementById("password2").value;
+  if (password1 != password2) {
+    alert("Passwords do not match");
+    return false;
+  }
+}
+</script>
+</html>
