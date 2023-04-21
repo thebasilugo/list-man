@@ -12,3 +12,12 @@ login.addEventListener("click", () => {
 	slider.classList.remove("moveslider");
 	formSection.classList.remove("form-section-move");
 });
+
+function validateForm() {
+  var password1 = document.getElementById("password1").value;
+  var password2 = document.getElementById("password2").value;
+  if (password1 != password2) {
+    alert("Passwords do not match");
+    return false;
+  }
+}
