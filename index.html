@@ -10,14 +10,22 @@
 <body>
     <div class="container">
         <div class="todo-app">
-            <h1>To-Do List</h1>
-            <p id="error"></p>
+            <div class="greeting">
+                <h1>To-Do List</h1>
+                <h1 class="title">
+                    Hey There, <input type="text" id="name" placeholder="Enter your name">
+                </h1>
+            </div>
+            <p class="renderInfo">
+                <span id="error"></span>
+                <span id="hint"></span>
+            </p>
+            <p id="hint"></p>
             <div class="input-row">
-                <input class="input-todo-field" type="text" id="input-box" placeholder="Enter your text" autofocus>
+                <input class="input-todo-field" type="text" id="input-box" placeholder="E.g; Call my imaginary girlfriend..." autofocus>
                 <button class="add-btn" onclick="addTask()">Add</button>
             </div>
             <ul id="list-container">
-                <!-- <p id="error"></p> -->
             </ul>
         </div>
         <div class="signature">
