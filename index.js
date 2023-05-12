@@ -1,19 +1,37 @@
 const inputBox = document.querySelector("#input-box");
 const listContainer = document.querySelector("#list-container");
 const renderError = document.querySelector("#error");
+const renderHint = document.querySelector("#hint")
 
-
-
+// On load, get the username (if any) from localStorage and display it
+window.addEventListener('load', () => {
+    const nameInput = document.querySelector('#name');
+    const username = localStorage.getItem('username') || '';
+    nameInput.value = username;
+    
+    // Save the changed username to localStorage 
+    nameInput.addEventListener('change', e => {
+        localStorage.setItem('username', e.target.value);
+    })
+})
 
 // Functions
     // Display an error message when the 'Add' button is clicked, without any text being entered
     function errorMsg(){
         renderError.textContent = "Error. You have to write something!";
+        setTimeout(endTimeout, 2000);
+    }
+    
+    // Hint for users unaware of using 'Enter' to save messages 
+    function hintMsg(){
+        renderHint.textContent = "Hint: You can save information by clicking the 'Enter' key."
+        setTimeout(endTimeout, 2000);
     }
 
     // Remove the error message
     function endTimeout(){
         renderError.textContent = "";
+        renderHint.textContent = "";
     }
 
     // Add a To-Do when the 'Add' button is pressed
@@ -22,11 +40,8 @@ const renderError = document.querySelector("#error");
         if(inputBox.value === ''){
             // If there's nothing in the textbox, then display the error message
             errorMsg();
-            // Make the error message end/disappear.
-            setTimeout(endTimeout, 1000);
             saveData();
-
-            
+   
         }else {
             // run 'listExists()'
 
@@ -38,6 +53,7 @@ const renderError = document.querySelector("#error");
             span.textContent = "\u00d7";
             li.appendChild(span);
             saveData();
+            // hintMsg();
         }
         inputBox.value = "";
         saveData();
@@ -66,7 +82,6 @@ const renderError = document.querySelector("#error");
     }, false)
 
     // Saving the data to the browser's local storage so that reloads, refreshing or closing of the page doesn't affect it.
-    // NB: Clearing of browser cache relative to time that the To-Dos were saved will affect saved information
     function saveData(){
         localStorage.setItem("savedata", listContainer.innerHTML);
     }
