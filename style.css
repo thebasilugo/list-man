@@ -9,20 +9,18 @@
     width: 100%;
     min-height: 100vh;
     background-color: rgb(255, 255, 255);
-    padding: 10px;
+    padding: 5px;
     overflow: hidden;
 }
 
 .todo-app {
     width: 100%;
-    max-width: 540px;
+    max-width: 650px;
     background: rgb(255, 255, 255);
-    margin: 80px auto 20px;
+    margin: 20px auto 20px;
     padding: 35px 25px 65px;
     border-radius: 15px;
-    transition: box-shadow 0.5s,
-                padding 0.5s;
-
+    transition: all 0.5s ease-in-out;
 }
 
 .todo-app:hover {
@@ -31,18 +29,56 @@
 }
 
 .todo-app h1 {
-    color: rgb(16, 31, 54);
+    color: rgb(7, 7, 7);
     text-align: center;
-    margin-bottom: 15px;
-    font-size: 20px;   
+    margin-bottom: 10px;
+    font-size: 20px; 
 }
 
-#error {
+.greeting .title {
     text-align: center;
-    color: rgb(255, 0, 0);
-    font-size: 10px;
-    padding: 5px 0px;
+    color: rgb(5, 58, 71);
+    margin-bottom: 15px;
+    margin-left: 100px;
+    font-size: 16px;
 }
+
+.greeting .title input {
+    color: rgb(37, 37, 37);
+    overflow: scroll;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    transition: all 0.5;
+}
+
+.greeting .title input:hover {
+    color: rgb(78, 78, 78);
+}
+
+.greeting .title input:active {
+    color: rgb(143, 143, 143);
+}
+
+.renderInfo {
+    text-align: center;
+}
+
+    #error {
+        color: rgb(255, 0, 0);
+        font-size: 10px;
+        padding: 5px 0px;
+    }
+
+    /* #hint {
+        color: rgb(0, 116, 0);
+        border: 1px;
+        border-color: black;
+        font-size: 10px;
+        padding: 5px 0px;
+    } */
 
 .input-row {
     display: flex;
@@ -72,7 +108,7 @@
     border-radius: 50px;
     font-size: 13px;
     cursor: pointer;
-    transition: padding 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
 .add-btn:hover {
@@ -82,22 +118,19 @@
 
 ul li {
     list-style: none;
-    font-size: 13px;
-    padding: 11px 8px 10px 50px;
+    font-size: 12px;
+    padding: 11px 35px 10px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: border-radius 0.15s,
-                font-size 0.15s,
-                box-shadow 0.15s;
+    transition: all 0.25s ease-in-out;
 }
 
 ul li:hover {
     background: rgb(240, 240, 240);
     border-radius: 50px;
-    font-size: 15px;
-    box-shadow: 1px 1px 5px 0;
+    font-size: 13px;
     border: none;
 }
 
@@ -144,7 +177,7 @@ ul li span:hover {
     border-radius: 50px;
 }
 
-.signature{
+.signature {
 	font-size: 10px;
 	font-weight: bold;
 	display: inline;
@@ -153,25 +186,12 @@ ul li span:hover {
 	color: rgb(0, 0, 0);
 }
 
-.signature a{
+.signature a {
 	color: rgb(0, 0, 0);
 	text-decoration: none;
-	transition:	color 0.2s;
+	transition:	all 0.25s ease-in-out;
 }
 
-.signature a:hover{
+.signature a:hover {
 	color: rgb(0, 99, 102);
-}
-
-.light-mode button{
-	font-size: 12px;
-	/* font-weight: bold; */
-    border-radius: 50px;
-    padding: 5px 10px;
-    background-color: rgb(58, 58, 58);
-    color: rgb(245, 245, 245);
-    border: none;
-	display: flex;
-	text-align: center;
-	cursor: pointer;
 }
