@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>To-Do List App</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="todo-app">
-            <div class="greeting">
-                <h1>To-Do List</h1>
-                <h1 class="title">
-                    Hey There, <input type="text" id="name" placeholder="Enter your name">
-                </h1>
-            </div>
-            <p class="renderInfo">
-                <span id="error"></span>
-                <span id="hint"></span>
-            </p>
-            <p id="hint"></p>
-            <div class="input-row">
-                <input class="input-todo-field" type="text" id="input-box" placeholder="E.g; Call my imaginary girlfriend..." autofocus>
-                <button class="add-btn" onclick="addTask()">Add</button>
-            </div>
-            <ul id="list-container">
-            </ul>
+      <h1>To-Do List</h1>
+      <div class="todo-app">
+        <div class="greeting">
+          <h1 class="title">
+            Hey There,
+            <input type="text" id="name" placeholder="Enter your name" />
+          </h1>
         </div>
-        <div class="signature">
-            <footer>
-                &copy;
-                <a href="https://thebasilugo.github.io/staticweb" target="_blank">
-                thebasilugo
-                </a>2023
-            </footer>
+        <p class="renderInfo">
+          <span id="error"></span>
+          <!-- <span id="hint"></span> -->
+        </p>
+        <p id="hint"></p>
+        <div class="input-row">
+          <input
+            class="input-todo-field"
+            type="text"
+            id="input-box"
+            placeholder="E.g; Call my imaginary girlfriend..."
+            autofocus
+          />
+          <!-- <button class="filter-btn" onclick="createFilterInput()"><img class="search-icon" src="images/search.svg" alt="Search"></button> -->
+          <button class="add-btn" onclick="addTask()">Add</button>
         </div>
+        <ul id="list-container">
+            <!-- <button class="edit-btn">
+                <img class="edit-img" src="/projects/edit-pen.png" alt="Edit Pen">
+            </button> -->
+        </ul>
+      </div>
+      <div class="signature">
+        <footer>
+          &copy;
+          <a href="https://thebasilugo.github.io/staticweb" target="_blank">
+            thebasilugo </a
+          >2023
+        </footer>
+      </div>
+      <!-- <div class="light-mode">
+            <button>
+                Toggle Dark Mode
+            </button>
+        </div> -->
     </div>
     <script src="script.js"></script>
-</body>
-</html> 
+  </body>
+</html>
