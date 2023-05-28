@@ -11,6 +11,14 @@
     background-color: rgb(255, 255, 255);
     padding: 5px;
     overflow: hidden;
+    padding: 20px 0px 80px;
+}
+
+.container h1 {
+    color: rgb(7, 7, 7);
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 25px;
 }
 
 .todo-app {
@@ -18,21 +26,14 @@
     max-width: 650px;
     background: rgb(255, 255, 255);
     margin: 20px auto 20px;
-    padding: 35px 25px 65px;
+    padding: 5px 25px 20px;
     border-radius: 15px;
     transition: all 0.5s ease-in-out;
 }
 
 .todo-app:hover {
     box-shadow: 4px 4px 15px 0;
-    padding: 40px 40px 70px;
-}
-
-.todo-app h1 {
-    color: rgb(7, 7, 7);
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 20px; 
+    padding: 25px 40px 55px;
 }
 
 .greeting .title {
@@ -72,14 +73,6 @@
         padding: 5px 0px;
     }
 
-    /* #hint {
-        color: rgb(0, 116, 0);
-        border: 1px;
-        border-color: black;
-        font-size: 10px;
-        padding: 5px 0px;
-    } */
-
 .input-row {
     display: flex;
     align-items: center;
@@ -97,6 +90,32 @@
     background: transparent;
     padding: 10px;
     font-size: 13.5px;
+}
+
+.filter-btn {
+    border: none;
+    outline: none;
+    background: rgb(40, 151, 170);
+    padding: 5px 10px;
+    margin-right: 2px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.filter-btn:hover {
+    background: rgb(121, 171, 184);
+    padding: 5px 20px;
+}
+
+.search-icon {
+    margin-top: 1px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .add-btn {
@@ -127,6 +146,11 @@ ul li {
     transition: all 0.25s ease-in-out;
 }
 
+ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
 ul li:hover {
     background: rgb(240, 240, 240);
     border-radius: 50px;
@@ -145,6 +169,11 @@ ul li::before {
     background-position: center;
     top: 8px;
     left: 12px;
+    transition: all 0.15s ease-in-out;
+}
+
+ul li:hover::before {
+    background-color: rgb(255, 255, 255);
 }
 
 ul li.checked {
@@ -158,6 +187,41 @@ ul li.checked::before {
     width: 25px;
     top: 8px;
     left: 10px;
+}
+
+ul li::after{
+    background-image: url(/projects/edit-pen.png);
+    height: 25px;
+    width: 25px;
+    top: 8px;
+    left: 10px;
+}
+
+
+ul li button {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    background: transparent;
+    text-align: center;
+    margin-right: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+ul li img {
+    height: 20px;
+    width: 20px;
+    margin-top: 2px;
+}
+
+ul li button:hover {
+    background: rgb(255, 255, 255);
+    border-radius: 50px;
 }
 
 ul li span {
