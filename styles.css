@@ -99,14 +99,6 @@
         padding: 5px 0px;
     }
 
-    /* #hint {
-        color: rgb(0, 116, 0);
-        border: 1px;
-        border-color: black;
-        font-size: 10px;
-        padding: 5px 0px;
-    } */
-
 .input-row {
     display: flex;
     align-items: center;
@@ -230,17 +222,6 @@ ul li::after{
   top: 8px;
   left: 10px;
 }
-
-/* ul li .hamburger {
-    visibility: none;
-    display: inline;
-    border: none;
-    background: transparent;
-}
-
-ul li .hamburger:hover {
-    visibility: visible;
-} */
 
 ul li button {
   position: absolute;
