@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>List-Man</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container slideDown">
       <h1>To-Do List</h1>
       <div class="todo-app">
         <div class="greeting">
-          <h1 class="title">
+          <h2 class="title">
             Hey There,
             <input type="text" id="name" placeholder="Enter your name" />
-          </h1>
+          </h2>
         </div>
         <p class="renderInfo">
           <span id="error"></span>
@@ -31,16 +31,13 @@
           />
           <button class="add-btn" onclick="addTask()">Add</button>
         </div>
-        <ul id="list-container">
-            
-        </ul>
+        <ul id="list-container"></ul>
       </div>
       <div class="signature">
         <footer>
           &copy;
-          <a href="https://thebasilugo.github.io/staticweb" target="_blank">
-            thebasilugo </a
-          >2023
+          <a href="#" target="_blank"> thebasilugo</a>
+          2023
         </footer>
       </div>
     </div>
