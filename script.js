@@ -43,17 +43,15 @@ window.addEventListener('load', () => {
             saveData();
    
         }else {
+            // run 'listExists()'
             // If there's text inside the textbox, then add the To-Do to the To-Do List
-            const li = document.createElement("li");
-            // let a = document.createElement("a");
-            const span = document.createElement("span");
-            const editImg = document.createElement("img");
-            let editBtn = document.createElement("button");
-            editImg.src = "/images/edit-pen.png"
 
+            const li = document.createElement("li");
+            // const ellipseBtn = document.createElement("button");
+            const span = document.createElement("span");
+
+            // ellipseBtn.textContent = "..."
             li.textContent = inputBox.value;
-            li.appendChild(editBtn);
-            editBtn.appendChild(editImg);
             span.textContent = "\u00d7";
             li.appendChild(span);
 
