@@ -4,12 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>List-Man</title>
   </head>
   <body>
-    <div class="container slideDown">
-      <h1>To-Do List</h1>
+    <div class="container container-fluid slideDown">
+      <h1>
+        To-Do List
+        <button id="toggleDisplay">dark</button>
+      </h1>
       <div class="todo-app">
         <div class="greeting">
           <h2 class="title">
@@ -19,6 +34,7 @@
         </div>
         <p class="renderInfo">
           <span id="error"></span>
+          <!-- <span id="hint"></span> -->
         </p>
         <p id="hint"></p>
         <div class="input-row">
@@ -26,9 +42,10 @@
             class="input-todo-field"
             type="text"
             id="input-box"
-            placeholder="E.g; make a list..."
+            placeholder="E.g; Call my imaginary girlfriend..."
             autofocus
           />
+          <!-- <button class="filter-btn" onclick="createFilterInput()"><img class="search-icon" src="images/search.svg" alt="Search"></button> -->
           <button class="add-btn" onclick="addTask()">Add</button>
         </div>
         <ul id="list-container"></ul>
@@ -36,10 +53,17 @@
       <div class="signature">
         <footer>
           &copy;
-          <a href="#" target="_blank"> thebasilugo</a>
+          <a href="https://thebasilugo.github.io/staticweb" target="_blank">
+            thebasilugo</a
+          >
           2023
         </footer>
       </div>
+      <!-- <div class="light-mode">
+            <button>
+                Toggle Dark Mode
+            </button>
+        </div> -->
     </div>
     <script src="script.js"></script>
   </body>
