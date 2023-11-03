@@ -68,6 +68,10 @@
   margin: 0 auto;
 } */
 
+h1 > button {
+	display: none;
+}
+
 .greeting .title {
     text-align: center;
     color: rgb(5, 58, 71);
