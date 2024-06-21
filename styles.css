@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 /* remove explicitly defined colors for dark mode effects */
@@ -20,7 +20,7 @@
 
 @keyframes slideDown {
   0% {
-      transform: translateY(100px);
+    transform: translateY(100px);
   }
 
   100% {
@@ -33,34 +33,34 @@
 }
 
 .edit-btn {
-   display: none;
+  display: none;
 }
 
 .container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgb(255, 255, 255);
-    overflow: hidden;
-    margin: 10px auto;
-    padding: 20px 0px 80px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 20px 0px 80px;
 }
 
 .container h1 {
-    color: rgb(7, 7, 7);
-    text-align: center;
-    margin-bottom: 5px;
-    font-size: 25px;
+  color: rgb(7, 7, 7);
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 25px;
 }
 
 .todo-app {
-    width: 100%;
-    max-width: 750px;
-    min-width: 350px;
-    background: rgb(255, 255, 255);
-    margin: 20px auto;
-    padding: 20px 25px 20px;
-    border-radius: 15px;
-    transition: all 0.5s ease-in-out;
+  width: 100%;
+  max-width: 750px;
+  min-width: 350px;
+  background: rgb(255, 255, 255);
+  margin: 20px auto;
+  padding: 20px 25px 20px;
+  border-radius: 15px;
+  transition: all 0.5s ease-in-out;
 }
 /* 
 .greeting {
@@ -69,47 +69,47 @@
 } */
 
 h1 > button {
-	display: none;
+  display: none;
 }
 
 .greeting .title {
-    text-align: center;
-    color: rgb(5, 58, 71);
-    margin-bottom: 15px;
-    font-size: 16px;
+  text-align: center;
+  color: rgb(5, 58, 71);
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 .greeting .title input {
-    color: rgb(37, 37, 37);
-    overflow: scroll;
-    font-weight: bold;
-    border: none;
-    width: 150px;
-    outline: none;
-    background: transparent;
-    font-size: 16px;
-    transition: all 0.5;
+  color: rgb(37, 37, 37);
+  overflow: scroll;
+  font-weight: bold;
+  border: none;
+  width: 150px;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  transition: all 0.5;
 }
 
 .greeting .title input:hover {
-    color: rgb(78, 78, 78);
+  color: rgb(78, 78, 78);
 }
 
 .greeting .title input:active {
-    color: rgb(143, 143, 143);
+  color: rgb(143, 143, 143);
 }
 
 .renderInfo {
-    text-align: center;
+  text-align: center;
 }
 
-    #error {
-        color: rgb(255, 0, 0);
-        font-size: 10px;
-        padding: 5px 0px;
-    }
+#error {
+  color: rgb(255, 0, 0);
+  font-size: 10px;
+  padding: 5px 0px;
+}
 
-    /* #hint {
+/* #hint {
         color: rgb(0, 116, 0);
         border: 1px;
         border-color: black;
@@ -118,48 +118,49 @@ h1 > button {
     } */
 
 .input-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(237, 238, 240);
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(237, 238, 240);
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
 }
 
 .input-todo-field {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-size: 13.5px;
+  flex: 1;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 13.5px;
 }
 
 .filter-btn {
-    border: none;
-    outline: none;
-    background: rgb(40, 151, 170);
-    padding: 5px 10px;
-    margin-right: 2px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
+  border: none;
+  outline: none;
+  background: rgb(40, 151, 170);
+  padding: 5px 10px;
+  margin-right: 2px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .filter-btn:hover {
-    background: rgb(121, 171, 184);
-    padding: 5px 20px;
+  background: rgb(121, 171, 184);
+  padding: 5px 20px;
 }
 
 .search-icon {
-    margin-top: 1px;
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-    border-radius: 10px;
+  margin-top: 1px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .add-btn {
@@ -190,7 +191,7 @@ ul li {
   transition: all 0.25s ease-in-out;
 }
 
-ul li a{
+ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
@@ -203,7 +204,7 @@ ul li:hover {
 }
 
 ul li::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 20px;
   width: 20px;
@@ -233,7 +234,7 @@ ul li.checked::before {
   left: 10px;
 }
 
-ul li::after{
+ul li::after {
   background-image: url(/projects/edit-pen.png);
   height: 25px;
   width: 25px;
@@ -296,22 +297,22 @@ ul li span:hover {
 }
 
 .signature {
-	font-size: 10px;
-	font-weight: bold;
-	display: inline;
-	text-align: center;
-	cursor: pointer;
-	color: rgb(0, 0, 0);
+  font-size: 10px;
+  font-weight: bold;
+  display: inline;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
 }
 
 .signature a {
-	color: rgb(0, 0, 0);
-	text-decoration: none;
-	transition:	color 0.25s ease-in-out;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
 }
 
 .signature a:hover {
-	color: rgb(0, 99, 102);
+  color: rgb(0, 99, 102);
   border-bottom: 2px solid black;
 }
 
@@ -323,7 +324,7 @@ ul li span:hover {
   background-color: rgb(58, 58, 58);
   color: rgb(245, 245, 245);
   border: none;
-	display: flex;
-	text-align: center;
-	cursor: pointer;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
 }
