@@ -1,7 +1,8 @@
 const inputBox = document.querySelector("#input-box");
+const addBtn = document.querySelector("#add-btn");
 const listContainer = document.querySelector("#list-container");
 const renderError = document.querySelector("#error");
-const renderHint = document.querySelector("#hint");
+// const renderHint = document.querySelector("#hint");
 
 // On load, get the username (if any) from localStorage and display it
 window.addEventListener("load", () => {
@@ -22,82 +23,74 @@ function errorMsg() {
   setTimeout(endTimeout, 2000);
 }
 
-// Hint for users unaware of using 'Enter' to save messages
-function hintMsg() {
-  renderHint.textContent =
-    "Hint: You can save information by clicking the 'Enter' key.";
-  setTimeout(endTimeout, 2000);
-}
-
 // Remove the error message
 function endTimeout() {
   renderError.textContent = "";
-  renderHint.textContent = "";
+  // renderHint.textContent = "";
 }
 
-// Add a To-Do when the 'Add' button is pressed
-function addTask() {
+const addTask = () => {
   if (inputBox.value === "") {
     // If there's nothing in the textbox, then display the error message
     errorMsg();
     saveData();
   } else {
-    // run 'listExists()'
-    // If there's text inside the textbox, then add the To-Do to the To-Do List
-
-    const li = document.createElement("li");
-    li.classList = "list-item";
-    // const ellipseBtn = document.createElement("button");
-    const span = document.createElement("span");
-    const editImg = document.createElement("img");
-    let editBtn = document.createElement("button");
-    // editImg.src = "/images/edit-pen.png";
-
-    // ellipseBtn.textContent = "..."
-    li.textContent = inputBox.value;
-    span.textContent = "\u00d7";
-    li.appendChild(span);
-
-    listContainer.appendChild(li);
+    addListItem();
     saveData();
   }
   inputBox.value = "";
   saveData();
-}
+};
+
+// Add a To-Do when the 'Add' button is pressed
+addBtn.addEventListener("click", addTask);
 
 // Add a To-Do when the 'Enter' is pressed
-inputBox.addEventListener("keypress", function (event) {
+inputBox.addEventListener("keypress", (event) => {
   // If the user presses the "Enter" key
   if (event.key === "Enter") {
     // Cancel the default action, if needed
     event.preventDefault();
     // Trigger the add-btn 'button' element with a click
-    document.querySelector(".add-btn").click();
+    addTask();
   }
 });
 
-// Creating a list item, to save the typed information in the HTML
+// Function to handle the click event on the list items
+// Event delegation to handle button clicks inside listContainer
 listContainer.addEventListener(
   "click",
   function (e) {
     if (e.target.tagName === "LI") {
       e.target.classList.toggle("checked");
       saveData();
-    } else if (e.target.tagName === "SPAN") {
-      e.target.parentElement.remove();
-      saveData();
-    } else if (e.target.tagName === "IMG" || e.target.tagName === "BUTTON") {
-      inputBox.focus();
-      inputBox.addEventListener("blur", (e) => {
-        saveData();
-        showTask();
-      });
-      // e.target.parentElement.focus();
-      saveData();
+    } else if (
+      e.target.classList.contains("delete-btn") ||
+      e.target.closest(".delete-btn")
+    ) {
+      // Directly call removeListItem here, passing the event
+      removeListItem(e);
+    } else if (e.target.tagName === "BUTTON") {
+      const listItem = e.target.parentElement;
+      expandButtons(listItem);
     }
   },
   false
 );
+
+// Updated removeListItem function to use the event object
+function removeListItem(e) {
+  // If the clicked element is the delete button, remove its parent (the list item)
+  if (e.target.classList.contains("delete-btn")) {
+    e.target.parentElement.remove();
+    saveData();
+  }
+  // If the clicked element is within a delete button (e.g., an icon inside the button), remove the closest list item
+  else if (e.target.closest(".delete-btn")) {
+    e.target.closest("li").remove();
+    saveData();
+  }
+}
 
 // Saving the data to the browser's local storage so that reloads, refreshing or closing of the page doesn't affect it.
 function saveData() {
@@ -110,14 +103,25 @@ function showTask() {
 }
 showTask();
 
-let filterInput = document.querySelector("#filter-btn");
-filterCount = 1;
+// Function to add a new list item
+function addListItem() {
+  // Create the new list item and its contents
+  const listItem = document.createElement("li");
+  listItem.classList.add("list-item");
 
-function createFilterInput() {
-  for (i = 0; i < filterCount; i--) {
-    const filterTextBox = document.createElement("input");
-    const input = document.createElement("input");
-    input.setAttribute("type", "text");
-    document.body.appendChild(input);
-  }
+  const textNode = document.createTextNode(inputBox.value);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-btn");
+
+  const icon = document.createElement("i");
+  icon.classList.add("x", "icon");
+
+  // Append the contents to the list item
+  listItem.appendChild(textNode);
+  listItem.appendChild(deleteButton);
+  deleteButton.appendChild(icon);
+
+  // Append the list item to the list container
+  listContainer.appendChild(listItem);
 }
