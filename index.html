@@ -27,6 +27,10 @@
         transition: background-color 0.1s;
       }
 
+      .list-item:hover {
+        background-color: #edf2f7;
+      }
+
       .delete-btn {
         border-radius: 50%;
         display: flex;
@@ -59,7 +63,11 @@
   </head>
   <body class="bg-gray-100 my-8">
     <div class="container mx-auto p-4 md:p-8 max-w-xl">
-      <h1 class="text-3xl font-bold mb-4 text-center mr-4">ListMan</h1>
+      <h1
+        class="text-3xl font-bold mb-4 text-center flex justify-between items-center mr-4"
+      >
+        ListMan
+      </h1>
       <div class="todo-app bg-white p-4 rounded shadow">
         <div class="greeting mb-4">
           <h2 class="title text-xl sm:text-md text-center">
