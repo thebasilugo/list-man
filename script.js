@@ -30,7 +30,7 @@ function endTimeout() {
 }
 
 const addTask = () => {
-  if (inputBox.value === "") {
+  if (inputBox.value.trim() === "") {
     // If there's nothing in the textbox, then display the error message
     errorMsg();
     saveData();
