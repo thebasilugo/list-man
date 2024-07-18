@@ -112,7 +112,7 @@ function addListItem() {
   const textNode = document.createTextNode(inputBox.value);
 
   const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-btn");
+  deleteButton.classList.add("delete-btn", "ui", "icon", "button", "circular");
 
   const icon = document.createElement("i");
   icon.classList.add("x", "icon");
