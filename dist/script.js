@@ -7,7 +7,7 @@ window === null || window === void 0 ? void 0 : window.addEventListener("load", 
     const nameInput = document.querySelector("#name");
     const username = localStorage.getItem("username") || "";
     nameInput.value = username;
-    nameInput.addEventListener("change", (e) => {
+    nameInput === null || nameInput === void 0 ? void 0 : nameInput.addEventListener("change", (e) => {
         localStorage.setItem("username", e.target.value);
     });
 });
