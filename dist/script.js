@@ -11,3 +11,10 @@ window === null || window === void 0 ? void 0 : window.addEventListener("load", 
         localStorage.setItem("username", e.target.value);
     });
 });
+const errorMsg = () => {
+    renderError.textContent = "Error. You have to write something!";
+    setTimeout(endTimeout, 2000);
+};
+function endTimeout() {
+    renderError.textContent = "";
+}
