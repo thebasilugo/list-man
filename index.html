@@ -19,6 +19,7 @@
 			@keyframes fadeIn {
 				0% {
 					opacity: 0;
+					transform: translateY(20px);
 				}
 				100% {
 					opacity: 1;
@@ -62,10 +63,6 @@
 				align-items: center;
 			}
 
-			.hidden {
-				visibility: hidden;
-			}
-
 			ul li.checked {
 				color: rgb(126, 126, 126);
 			}
@@ -79,17 +76,32 @@
 				text-decoration: none;
 			}
 
-			.ui.icon.button.circular::selection {
-				background: transparent; /* Makes the selection background transparent */
-				color: inherit; /* Keeps the text color the same as it was before selection */
+			.filter-btn {
+				margin: 0.5rem 0.5rem;
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.2s, color 0.2s ease-in-out;
 			}
 
-			/* dark mode */
-			/* Base Dark Mode Styles */
+			.filter-btn:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+				color: #ffffff;
+			}
 
+			.filter-btn.active {
+				background-color: rgba(0, 0, 0, 0.8);
+				color: #fff;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			/* Dark Mode Styles */
 			body.dark-mode {
-				background-color: #121212; /* Darker background for the body */
-				color: #e0e0e0; /* Lighter text color for general readability */
+				background-color: #1a1a1a;
+				color: #e0e0e0;
 			}
 
 			body.dark-mode #name {
@@ -159,7 +171,7 @@
 		</style>
 	</head>
 	<body class="fadeIn bg-gray-100 my-8">
-		<div class="container mx-auto p-4 md:p-8 max-w-xl">
+		<div class="container mx-auto p-4 md:p-8 max-w-xl sm:max-w-4xl">
 			<h1
 				class="text-3xl font-bold mb-4 text-center flex justify-between items-center mr-4"
 			>
@@ -168,14 +180,6 @@
 					<button id="toggle-theme" class="ui icon button circular">
 						<i id="toggle-theme-icon" class="moon icon"></i>
 					</button>
-					<!-- Width Icon for Semantic UI -->
-					<!-- <button id="toggle-width" class="ui icon button circular">
-            <i class="arrows alternate horizontal icon"></i>
-          </button> -->
-					<!-- refresh button -->
-					<!-- <button id="toggle-width" class="ui icon button circular">
-            <i class="refresh icon"></i>
-          </button> -->
 				</div>
 			</h1>
 			<div class="todo-app bg-white p-4 rounded-xl shadow">
@@ -186,51 +190,43 @@
 							type="text"
 							id="name"
 							placeholder="Enter your name"
-							class="border bg-gray text-gray-900 p-1 rounded-lg w-3/5 sm:w-2/4 outline-none"
+							class="border text-gray-900 p-1 rounded-lg w-3/5 sm:w-2/4 outline-none"
 						/>
 					</h2>
 				</div>
 				<div class="renderInfo mb-4">
-					<!-- make this hidden and not display none -->
 					<span id="error" class="text-red-700 text-center hidden"></span>
 				</div>
-				<!-- <p id="hint" class="mb-4"></p> -->
 				<div class="input-row flex items-center mb-4">
 					<input
-						class="input-todo-field border p-2 rounded-lg flex-grow mr-3 outline-none text-lg sm:text-xl text-gray-950"
+						class="input-todo-field border p-2 rounded flex-grow mr-3 outline-none text-lg sm:text-xl text-gray-950"
 						type="text"
 						id="input-box"
-						placeholder="e.g; play the guitar..."
+						placeholder="e.g., play the guitar..."
 						autofocus
 					/>
 					<button id="add-btn" class="ui icon button circular">
 						<i class="plus icon"></i>
 					</button>
 				</div>
-				<ul id="list-container" class="list-disc text-xl flex flex-col">
-					<!-- <li class="list-item">
-            yesbro
-            <button class="delete-btn">
-              <i class="x icon"></i>
-            </button>
-          </li>
-          <li class="list-item">
-            yes
-            <button class="delete-btn">
-              <i class="x icon"></i>
-            </button>
-          </li> -->
-				</ul>
+				<div class="filter-row flex justify-center mb-4">
+					<button id="filter-all" class="filter-btn active">All</button>
+					<button id="filter-completed" class="filter-btn">Completed</button>
+					<button id="filter-incomplete" class="filter-btn">Incomplete</button>
+				</div>
+				<ul id="list-container" class="list-disc text-xl flex flex-col"></ul>
 			</div>
 			<div class="signature mt-4">
-				<footer class="text-gray-500 text-center">
-					&copy; <span id="year-range"></span
-					><a
+				<footer
+					class="text-gray-500 text-center fixed bottom-0 left-0 right-0 z-50 footer-blur p-4 dark:text-gray-300"
+				>
+					&copy; <span id="year-range"></span>
+					&ThinSpace;
+					<a
 						href="https://thebasilugo.github.io/portfolio"
 						class="hover:text-gray-500 hover:underline"
 						target="_blank"
-					>
-						thebasilugo</a
+						>thebasilugo</a
 					>
 				</footer>
 			</div>
