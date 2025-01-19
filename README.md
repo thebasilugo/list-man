@@ -2,7 +2,7 @@
 
 ## Introduction
 
-ListMan is a simple, intuitive web application designed to help users manage their daily tasks with ease. It offers a clean interface for adding, viewing, and organizing tasks, making it an essential tool for anyone looking to enhance their productivity.
+ListMan is a simple, intuitive web application designed to help users manage their daily tasks with ease. It offers a clean interface for adding, viewing, and organizing tasks, making it an essential tool for anyone looking to enhance their productivity
 
 ## Features
 
