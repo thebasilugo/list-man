@@ -73,14 +73,29 @@
 				text-decoration: none;
 			}
 
-			.ui.icon.button.circular::selection {
-				background: transparent; /* Makes the selection background transparent */
-				color: inherit; /* Keeps the text color the same as it was before selection */
+			.filter-btn {
+				margin: 0.5rem 0.5rem;
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: background-color 0.2s, color 0.2s ease-in-out;
 			}
 
-			/* dark mode */
-			/* Base Dark Mode Styles */
+			.filter-btn:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+				color: #ffffff;
+			}
 
+			.filter-btn.active {
+				background-color: rgba(0, 0, 0, 0.8);
+				color: #fff;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			/* Dark Mode Styles */
 			body.dark-mode {
 				background-color: #121212; /* Darker background for the body */
 				color: #e0e0e0; /* Lighter text color for general readability */
